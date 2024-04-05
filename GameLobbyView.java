@@ -1,3 +1,8 @@
+/**
+ * The GameLobbyView class represents the view component of the game lobby,
+ * providing the graphical user interface for the game lobby.
+ */
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
@@ -31,6 +36,12 @@ public class GameLobbyView  {
 
     private GameLobbyModel Model;
 
+    /**
+     * Constructs a new GameLobbyView object.
+     *
+     * @param controller the game lobby controller
+     * @param model      the game lobby model
+     */
     public GameLobbyView (GameLobbyController controller, GameLobbyModel model)
     {
         this.Model = model;
@@ -156,6 +167,9 @@ public class GameLobbyView  {
         mainFrame.add(mainPanel, BorderLayout.CENTER);
     }
 
+    /**
+     * Updates the view with the latest player information.
+     */
     public void updateView ()
     {
         MCharacter character = Model.returnMCharacter();
@@ -169,46 +183,85 @@ public class GameLobbyView  {
         FTH.setText("<html><pre>Faith         : "+character.getFaith()+"</pre></html>");
     }
 
+
+    /**
+     * Displays the game lobby view.
+     */
     public void initiateGameLobbyView()
     {
         mainFrame.setVisible(true);
     }
 
+    /**
+     * Disposes of the game lobby view.
+     */
     public void disposeGameLobbyView ()
     {
         this.mainFrame.dispose();
     }
 
+    /**
+     * Disables the frame of the game lobby view.
+     */
     public void disableFrame ()
     {
         this.mainFrame.setEnabled(false);
     }
 
+    /**
+     * Enables the frame of the game lobby view.
+     */
     public void enableFrame ()
     {
         this.mainFrame.setEnabled(true);
     }
 
+    /**
+     * Sets the action listener for the fast travel button.
+     *
+     * @param actionListener the action listener for the fast travel button
+     */
     public void setFastTravelButtonListener(ActionListener actionListener)
     {
         this.fastTravelButton.addActionListener(actionListener);
     }
 
+    /**
+     * Sets the action listener for the level up button.
+     *
+     * @param actionListener the action listener for the level up button
+     */
     public void setLevelUpButtonListener (ActionListener actionListener)
     {
         this.levelUpButton.addActionListener(actionListener);
     }
 
+
+    /**
+     * Sets the action listener for the inventory button.
+     *
+     * @param actionListener the action listener for the inventory button
+     */
     public void setInventoryButtonListener (ActionListener actionListener)
     {
         this.inventoryButton.addActionListener(actionListener);
     }
 
+    /**
+     * Sets the action listener for the shop button.
+     *
+     * @param actionListener the action listener for the shop button
+     */
     public void setShopButtonListener (ActionListener actionListener)
     {
         this.shopButton.addActionListener(actionListener);
     }
 
+    /**
+     * Sets the action listener for the quit button.
+     *
+     * @param actionListener the action listener for the quit button
+     */
     public void setQuitButton (ActionListener actionListener)
     {
         this.quitButton.addActionListener(actionListener);

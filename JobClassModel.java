@@ -1,9 +1,15 @@
+/**
+ * The JobClassModel class represents a model for storing and managing job classes in the game.
+ */
 import java.util.ArrayList;
 
 public class JobClassModel {
 
     private ArrayList<JobClass> jobClasses = new ArrayList<>();
 
+    /**
+     * Constructs a new JobClassModel object and initializes job classes.
+     */
     public JobClassModel ()
     {
          JobClass vagabond = new JobClass("Vagabond", 15, 13, 9, 11, 14,9, 9);
@@ -30,6 +36,12 @@ public class JobClassModel {
          */
     }
 
+
+    /**
+     * Returns the list of job classes.
+     *
+     * @return the list of job classes
+     */
     public ArrayList<JobClass> returnJobClasses ()
     {
         return this.jobClasses;

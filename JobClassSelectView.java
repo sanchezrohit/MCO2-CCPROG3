@@ -1,7 +1,11 @@
+/**
+ * The JobClassSelectView class represents the GUI for selecting a job class during character creation.
+ */
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+
 
 public class JobClassSelectView extends JFrame{
 
@@ -11,7 +15,11 @@ public class JobClassSelectView extends JFrame{
 
     private JButton[] chosenJobClass = new JButton[6];
 
-    public JobClassSelectView (ArrayList<JobClass> jobClasses)
+    /**
+     * Constructs a JobClassSelectView with the provided list of job classes.
+     *
+     * @param jobClasses the list of job classes to display
+     */public JobClassSelectView (ArrayList<JobClass> jobClasses)
     {
         jobClassPanels = new JPanel(new GridLayout(2,3,10,10));
         jobClassPanels.setBackground(Color.GRAY);
@@ -86,6 +94,14 @@ public class JobClassSelectView extends JFrame{
     }
 
 
+    /**
+     * Creates a panel for displaying job class details.
+     *
+     * @param panel        the panel to display job class details
+     * @param jobClassName the name of the job class
+     * @param button       the button for selecting the job class
+     * @return the created panel
+     */
     private JPanel createJobClassPanel(JPanel panel, String jobClassName, JButton button) {
         JPanel jobClassPanel = new JPanel(new BorderLayout());
         JLabel headerLabel = new JLabel(jobClassName, SwingConstants.CENTER);
@@ -99,12 +115,22 @@ public class JobClassSelectView extends JFrame{
         return jobClassPanel;
     }
 
+
+    /**
+     * Adds an action listener to the button associated with the specified index.
+     *
+     * @param index          the index of the button
+     * @param actionListener the action listener to add
+     */
     public void addButtonActionListener(int index, ActionListener actionListener) {
         if (index >= 0 && index < chosenJobClass.length) {
             chosenJobClass[index].addActionListener(actionListener);
         }
     }
 
+    /**
+     * Disposes of the job selection window.
+     */
     public void disposeJobSelection ()
     {
         this.dispose();

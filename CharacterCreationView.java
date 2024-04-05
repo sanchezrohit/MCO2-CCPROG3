@@ -1,22 +1,62 @@
+/**
+ * The CharacterCreationView class represents the view component for character creation.
+ * It provides graphical user interface elements and methods for user interaction.
+ */
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
 
 public class CharacterCreationView {
 
+    /**
+     * Main frame for character creation
+     */
     private JFrame mainFrame = new JFrame("Character Creation");
+    /**
+     *  Button to enter character name
+     */
     private JButton enterCharacterName;
+    /**
+     * Button to select job class
+     */
     private JButton selectJobClass;
+    /**
+     *  Button to confirm and proceed
+     */
     private JButton confirmProceed;
+    /**
+     *  Button to go back
+     */
     private JButton goBack;
+    /**
+     *  Label for step 1
+     */
     private JLabel _1;
+    /**
+     * Label for step 2
+     */
     private JLabel _2;
+    /**
+     * Label for step 3
+     */
     private JLabel _3;
+    /**
+     *  Label for step 4
+     */
     private JLabel _4;
+    /**
+     *  Header label
+     */
     private JLabel frameHeader;
+    /**
+     *  Variable to store character name
+     */
+    private String charName;
 
-    String charName;
-
+    /**
+     * Constructs a new CharacterCreationView object.
+     */
     public CharacterCreationView ()
     {
         frameHeader = new JLabel("Character Creation");
@@ -78,6 +118,7 @@ public class CharacterCreationView {
         mainFrame.setResizable(false);
         mainFrame.setLocationRelativeTo(null);
 
+        // Add components to the main frame
         mainFrame.add(frameHeader);
         mainFrame.add(enterCharacterName);
         mainFrame.add(_1);
@@ -88,49 +129,85 @@ public class CharacterCreationView {
         mainFrame.add(goBack);
         mainFrame.add(_4);
 
-
-        //mainFrame.setVisible(true); change
     }
 
+    /**
+     * Adds an action listener to the enter character name button.
+     *
+     * @param actionListener the action listener to be added
+     */
     public void addOption1Listener (ActionListener actionListener)
     {
         enterCharacterName.addActionListener(actionListener);
     }
 
+    /**
+     * Adds an action listener to the enter character name button.
+     *
+     * @param actionListener the action listener to be added
+     */
     public void addOption2Listener(ActionListener actionListener)
     {
         selectJobClass.addActionListener(actionListener);
     }
+
+    /**
+     * Adds an action listener to the confirm and proceed button.
+     *
+     * @param actionListener the action listener to be added
+     */
     public void addOption3Listener (ActionListener actionListener)
     {
         confirmProceed.addActionListener(actionListener);
     }
+
+    /**
+     * Adds an action listener to the go back button.
+     *
+     * @param actionListener the action listener to be added
+     */
     public void addOption4Listener (ActionListener actionListener)
     {
         goBack.addActionListener(actionListener);
     }
 
-
+    /**
+     * Disposes of the main frame.
+     */
     public void disposeFrame ()
     {
         this.mainFrame.setVisible(false);
     }
 
+    /**
+     * Disables the main frame.
+     */
     public void disableFrame ()
     {
         this.mainFrame.setEnabled(false);
     }
 
+    /**
+     * Enables the main frame.
+     */
     public void enableFrame ()
     {
         this.mainFrame.setEnabled(true);
     }
 
+    /**
+     * Retrieves the character name from user input.
+     *
+     * @return the character name entered by the user
+     */
     public String getCharacterName ()
     {
         return charName = JOptionPane.showInputDialog("Enter your desired name:");
     }
 
+    /**
+     * Displays the character creation view.
+     */
     public void inititaeCharCreateView ()
     {
         this.mainFrame.setVisible(true);
